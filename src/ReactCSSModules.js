@@ -35,7 +35,7 @@ class ReactCSSModules {
    * @return {Array}
    */
   dependencies() {
-    return ["babel-plugin-react-css-modules", "postcss-scss", "postcss-nested"];
+    return ["babel-plugin-react-css-modules", "postcss-scss"];
   }
 
   /**
@@ -72,9 +72,9 @@ class ReactCSSModules {
 
       // Loop through all loaders on regular use options
       rule.use = Array.isArray(rule.use) ? rule.use.map(this.replaceLoaderOptions) : rule.use;
-      
+
       // Alternatively, loop through all of the oneOf options (if they exist)
-      rule.oneOf = Array.isArray(rule.oneOf) 
+      rule.oneOf = Array.isArray(rule.oneOf)
         // And then replace all the loaders on each individual option
         ? rule.oneOf.map(oneOf => {
           oneOf.use = oneOf.use.map(this.replaceLoaderOptions);
@@ -91,7 +91,7 @@ class ReactCSSModules {
   /**
    * This function replaces the loader options for any css-loader rules that are
    * found in the webpack config.
-   * @param {*} rule 
+   * @param {*} rule
    */
   replaceLoaderOptions = (rule) => {
     // If the loader is not the css-loader, we can safely skip it
@@ -136,8 +136,7 @@ class ReactCSSModules {
           {
             filetypes: {
               ".scss": {
-                syntax: "postcss-scss",
-                plugins: ["postcss-nested"],
+                syntax: "postcss-scss"
               },
             },
             exclude: "node_modules",

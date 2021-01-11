@@ -37,7 +37,6 @@
   },
   "dependencies": {
     "babel-plugin-react-css-modules": "^5.2.6",
-    "postcss-nested": "^5.0.3",
     "postcss-scss": "^3.0.4"
   },
   "devDependencies": {
